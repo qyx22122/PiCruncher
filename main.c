@@ -10,12 +10,13 @@ int main(int argc, char * argv[]){
 
     mpf_set_default_prec(PREC);
     
-    mpf_t pi,a,b,k,i;
+    mpf_t pi,a,b,k,i,c;
     mpf_init(pi);
     mpf_init(a);
     mpf_init(b);
     mpf_init(k);
     mpf_init(i);
+    mpf_init(c);
     
 
     for(mpf_set_ui(k,0);mpf_cmp_ui(k,PREC/4) != 0; mpf_add_ui(k,k,1)){
@@ -61,8 +62,12 @@ int main(int argc, char * argv[]){
         mpf_mul(a,a,b);
 
         mpf_add(pi,pi,a);
+        
 
-        gmp_printf("%Ff\n",k);
+        mpf_div_2exp(c,k,2);
+        mpf_div_ui(c,c,PREC/400);
+
+        gmp_printf("%Ff\n",c);
     
 
     }
