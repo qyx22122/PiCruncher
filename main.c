@@ -2,8 +2,8 @@
 #include "gmp.h"
 
 
-
-const int PREC = 200000;
+const int DIGITS = 20000;
+const int PREC = DIGITS * 3.320714617785747;
 
 
 int main(int argc, char * argv[]){
@@ -64,8 +64,7 @@ int main(int argc, char * argv[]){
         mpf_add(pi,pi,a);
         
 
-        mpf_div_2exp(c,k,2);
-        mpf_div_ui(c,c,PREC/400);
+        mpf_div_ui(c,k,PREC/400);
 
         gmp_printf("%Ff\n",c);
     
