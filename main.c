@@ -62,7 +62,7 @@ int main(int argc, char * argv[]){
 
         mpf_add(pi,pi,a);
 
-        gmp_printf("%Zd\n",k);
+        gmp_printf("%Ff\n",k);
     
 
     }
