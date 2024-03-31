@@ -3,7 +3,7 @@
 
 
 
-const int PREC = 50000;
+const int PREC = 200000;
 
 
 int main(int argc, char * argv[]){
@@ -61,6 +61,8 @@ int main(int argc, char * argv[]){
         mpf_mul(a,a,b);
 
         mpf_add(pi,pi,a);
+
+        gmp_printf("%Zd\n",k);
     
 
     }
