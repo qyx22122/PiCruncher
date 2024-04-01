@@ -1,22 +1,19 @@
 #include "stdio.h"
 #include "gmp.h"
 
-
-const int DIGITS = 20000;
-const int PREC = DIGITS * 3.320714617785747;
+const int PREC = 10000;
 
 
 int main(int argc, char * argv[]){
 
     mpf_set_default_prec(PREC);
     
-    mpf_t pi,a,b,k,i,c;
+    mpf_t pi,a,b,k,i;
     mpf_init(pi);
     mpf_init(a);
     mpf_init(b);
     mpf_init(k);
     mpf_init(i);
-    mpf_init(c);
     
 
     for(mpf_set_ui(k,0);mpf_cmp_ui(k,PREC/4) != 0; mpf_add_ui(k,k,1)){
@@ -64,9 +61,9 @@ int main(int argc, char * argv[]){
         mpf_add(pi,pi,a);
         
 
-        mpf_div_ui(c,k,PREC/400);
+        
 
-        gmp_printf("%Ff\n",c);
+        gmp_printf("%.0Ff/%d\n",k,PREC/4);
     
 
     }
